@@ -1,0 +1,18 @@
+vector<int> smallerNumbersThanCurrent(vector<int>& nums)
+    {
+        vector<int>a=nums;
+        unordered_map<int,int>mp;
+        sort(a.begin(),a.end());
+        while(!a.empty())
+        {
+            mp[a[a.size()-1]]=a.size()-1;
+            a.pop_back();
+        }
+      
+            for(auto i=0;i<nums.size();i++)
+            {
+                a.push_back(mp[nums[i]]);
+            }
+        return a;
+        
+    }
